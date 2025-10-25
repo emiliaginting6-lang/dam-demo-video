@@ -1,25 +1,39 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DAM Demo Video</title>
-  <style>
-    body { margin:0; background:#0b1220; color:#fff; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif; }
-    .wrap { max-width: 960px; margin: 32px auto; padding: 0 16px; }
-    h1 { font-size: 18px; font-weight: 600; margin: 0 0 12px; opacity:.9 }
-    video { width: 100%; height: auto; border-radius: 12px; outline: 1px solid rgba(255,255,255,.08); }
-    p{opacity:.7;font-size:14px}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <h1>DAM Frontend Demo</h1>
-    <video controls playsinline preload="metadata" poster="">
-      <source src="demo.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p>Jika video tidak muncul, tunggu sebentar lalu refresh.</p>
-  </div>
-</body>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DAM Frontend Demo</title>
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        margin: 0; min-height: 100dvh; display: grid; place-items: center;
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        background: #0b1e33;
+        background: linear-gradient(180deg,#eaf2fa 0%, #f5f7fa 100%);
+      }
+      .wrap { width: min(1200px, 96vw); padding: 24px; }
+      h1 { margin: 0 0 16px; font-size: 20px; color: #0A2E6F; }
+      video { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,.15); background:#000; }
+      .hint { margin-top: 10px; color: #5b6b7c; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>DAM Frontend Demo</h1>
+      <!-- ganti src jika namanya berbeda -->
+      <video
+        src="/media/demo.mp4"
+        controls
+        autoplay
+        muted
+        playsinline
+        loop
+        preload="metadata"
+      >
+        Browser kamu tidak mendukung video.
+      </video>
+      <div class="hint">Jika video tidak tampil, pastikan file <code>media/demo.mp4</code> ada di repo & nama persis sama (huruf besar/kecil).</div>
+    </div>
+  </body>
 </html>
